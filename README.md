@@ -7,7 +7,7 @@ The example Docker image provides a number of basic bash workers:
 
 * `workers/date.sh` - continuously outputs current date
 * `workers/number.sh` - continuously outputs random number
-* `workers/crash.sh` - continuously outputs random number (crash if number > 30,000)
+* `workers/crash.sh` - continuously outputs random number (crash if number > 31,000)
 
 The example Kubernetes deployment runs 3 copies of each worker, and restarts pods
 automatically, when a crash occurs.
