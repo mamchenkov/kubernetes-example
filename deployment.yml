@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: workers
+  template:
+    metadata:
+      labels:
+        app: workers
+    spec:
+      containers:
+        - name: worker-date
+          image: lmamchenkov/example
+          command: ["/workers/date.sh"]
+        - name: worker-number
+          image: lmamchenkov/example
+          command: ["/workers/number.sh"]
+        - name: worker-crash
+          image: lmamchenkov/example
+          command: ["/workers/crash.sh"]
+
